@@ -10,7 +10,7 @@ template(name='channel_info')
           .media-body
             form
               input(placeholder="Enterで送信").form-control 
-              input(type='checkbox' checked) 
+              input(type='checkbox' checked value="1") 
               span Twitterにも投稿
       each posts
         .list-group-item
@@ -22,10 +22,10 @@ template(name='channel_info')
   else
     .jumbotron
       h1 おおかみこどもの雨と雪
+      button(onclick='Meteor.loginWithTwitter()').btn.btn-primary.btn-lg
+        |実況をはじめる
       h3
         small 実況中のユーザ
       each users
         img.img-circle(src=profile.image)
       br
-      button(onclick='Meteor.loginWithTwitter()').btn.btn-primary.btn-lg(href='#', role='button') 
-        |実況をはじめる

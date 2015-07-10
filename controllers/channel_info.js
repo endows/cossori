@@ -7,7 +7,7 @@ if(Meteor.isClient){
       return Meteor.user()
     },
     posts:function(){
-      return Posts.find()
+      return Posts.find().fetch().reverse();
     }
   })
 
@@ -21,11 +21,11 @@ if(Meteor.isClient){
         body:input.value
       })
 
-      if(flag){
+      if(flag.checked){
         var text = input.value + " #金曜ロードショー #おおかみこどもの雨と雪"
         Meteor.call('tweet',text,"http://public-viewing.tk")
       }
-      
+
       input.value = ''
     }
   })
