@@ -1,7 +1,15 @@
 
 head
-  title sample
+  title 実況！
+  link(rel="icon" sizes="16x16 32x32" href='favicon.png')
 body
+  nav.navbar.navbar-default
+    .container-fluid
+      .navbar-header
+        a.navbar-brand(href='#')
+        h3
+          img(alt='Brand', src='icon.png' style='height:30px;width:30px;')
+          
   .container
     +channel_info
   button
