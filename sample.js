@@ -1,23 +1,11 @@
-if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
+Meteor.startup(function() {
+  ServiceConfiguration.configurations.remove({
+    service: "twitter"
+  })
+  ServiceConfiguration.configurations.insert({
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
-}
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
-}
+    "service": "twitter",
+    "consumerKey": "rp02I9NlanW0Rt1vC6GA",
+    "secret": "0II62Hr66QiOKjmASsexCrzPJChkxon1icm2avyQrvM"
+  })
+})

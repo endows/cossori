@@ -7,3 +7,7 @@
 meteor-platform
 autopublish
 insecure
+accounts-twitter
+accounts-base
+accounts-ui
+service-configuration
