@@ -11,3 +11,7 @@ accounts-twitter
 accounts-base
 accounts-ui
 service-configuration
+meteorhacks:npm
+
+
+npm-container
