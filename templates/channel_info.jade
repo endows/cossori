@@ -1,11 +1,29 @@
 template(name='channel_info')
-  .jumbotron
-
-    h1 おおかみこどもの雨と雪
-    h3
-      small 実況中のユーザ
-    each users
-      img.img-circle(src=profile.image)
-    br
-    button(onclick='Meteor.loginWithTwitter()').btn.btn-primary.btn-lg(href='#', role='button') 
-      |実況をはじめる
+  if my
+    .list-group  
+      .list-group-item
+        h1 おおかみこどもの雨と雪
+      .list-group-item
+        .media
+          .media-left
+            img.media-object(src=my.profile.image, alt='...')
+          .media-body
+            form
+              input(placeholder="Enterで送信").form-control
+      each posts
+        .list-group-item
+          .media
+            .media-left
+              img.media-object(src=my.profile.image, alt='...')
+            .media-body
+              p {{body}}
+  else
+    .jumbotron
+      h1 おおかみこどもの雨と雪
+      h3
+        small 実況中のユーザ
+      each users
+        img.img-circle(src=profile.image)
+      br
+      button(onclick='Meteor.loginWithTwitter()').btn.btn-primary.btn-lg(href='#', role='button') 
+        |実況をはじめる

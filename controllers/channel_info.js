@@ -2,6 +2,24 @@ if(Meteor.isClient){
   Template.channel_info.helpers({
     users:function(){
       return Users.find()
+    },
+    my:function(){
+      return Meteor.user()
+    },
+    posts:function(){
+      return Posts.find()
+    }
+  })
+
+  Template.channel_info.events({
+    'submit form':function(e){
+      e.preventDefault()
+      var input = e.target[0]
+      Posts.insert({
+        user:Meteor.userId(),
+        body:input.value
+      })
+      input.value = ''
     }
   })
 
@@ -19,5 +37,6 @@ if(Meteor.isClient){
 
   Meteor.startup(function(){
     Meteor.subscribe('users')
+    Meteor.subscribe('posts')
   })
 }
