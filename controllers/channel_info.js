@@ -15,10 +15,17 @@ if(Meteor.isClient){
     'submit form':function(e){
       e.preventDefault()
       var input = e.target[0]
+      var flag = e.target[1]
       Posts.insert({
         user:Meteor.userId(),
         body:input.value
       })
+
+      if(flag){
+        var text = input.value + " #金曜ロードショー #おおかみこどもの雨と雪"
+        Meteor.call('tweet',text,"http://public-viewing.tk")
+      }
+      
       input.value = ''
     }
   })

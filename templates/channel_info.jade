@@ -9,12 +9,14 @@ template(name='channel_info')
             img.media-object(src=my.profile.image, alt='...')
           .media-body
             form
-              input(placeholder="Enterで送信").form-control
+              input(placeholder="Enterで送信").form-control 
+              input(type='checkbox' checked) 
+              span Twitterにも投稿
       each posts
         .list-group-item
           .media
             .media-left
-              img.media-object(src=my.profile.image, alt='...')
+              img.media-object(src=user.profile.image, alt='...')
             .media-body
               p {{body}}
   else
