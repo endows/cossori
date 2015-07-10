@@ -1,6 +1,11 @@
 template(name='channel_info')
   .jumbotron
-    h1 [金曜ロードショー]おおかみこどもの雨と雪
-    p ...
-    p
-      a.btn.btn-primary.btn-lg(href='#', role='button') Learn more
+
+    h1 おおかみこどもの雨と雪
+    h3
+      small 実況中のユーザ
+    each users
+      img.img-circle(src=profile.image)
+    br
+    button(onclick='Meteor.loginWithTwitter()').btn.btn-primary.btn-lg(href='#', role='button') 
+      |実況をはじめる
