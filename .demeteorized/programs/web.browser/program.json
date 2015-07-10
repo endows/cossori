@@ -1,0 +1,31 @@
+{
+  "format": "web-program-pre1",
+  "manifest": [
+    {
+      "path": "b3f39905266a5d98e7a045660ed3ec524ed47482.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/b3f39905266a5d98e7a045660ed3ec524ed47482.js",
+      "size": 329482,
+      "hash": "b3f39905266a5d98e7a045660ed3ec524ed47482"
+    },
+    {
+      "path": "20ae2c8d51b2507244e598844414ecdec2615ce3.css",
+      "where": "client",
+      "type": "css",
+      "cacheable": true,
+      "url": "/20ae2c8d51b2507244e598844414ecdec2615ce3.css",
+      "sourceMap": "20ae2c8d51b2507244e598844414ecdec2615ce3.css.map",
+      "sourceMapUrl": "/20ae2c8d51b2507244e598844414ecdec2615ce3.map",
+      "size": 30,
+      "hash": "20ae2c8d51b2507244e598844414ecdec2615ce3"
+    },
+    {
+      "path": "head.html",
+      "where": "internal",
+      "type": "head",
+      "hash": "7cfaa9b059b77bbff5bef05da273af7e8845582f"
+    }
+  ]
+}
