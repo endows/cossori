@@ -4,7 +4,7 @@ if(Meteor.isClient){
   })
 
   Router.route('/', function () {
-    this.render('channel_info');
+    this.render('channel_list');
   })
 
   Router.route('/info',function(){
