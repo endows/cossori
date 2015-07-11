@@ -22,7 +22,7 @@ if(Meteor.isClient){
       })
 
       if(flag.checked){
-        var text = input.value + " #金曜ロードショー #おおかみこどもの雨と雪"
+        var text = input.value
         Meteor.call('tweet',text,"http://public-viewing.tk")
       }
 
@@ -32,7 +32,7 @@ if(Meteor.isClient){
 
   window.ads = function(){
     if(Meteor.userId() && !localStorage['tweeted']){
-      var text = "「おおかみこどもの雨と雪」の実況なう #金曜ロードショー #おおかみこどもの雨と雪"
+      var text = "[こっそり実況中]-おおかみこどもの雨と雪-"
       Meteor.call('tweet',text,"http://public-viewing.tk")
       localStorage['tweeted'] = true
     }
