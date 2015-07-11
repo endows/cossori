@@ -10,8 +10,12 @@ template(name='channel_info')
           .media-body
             form
               input(placeholder="Enterで送信").form-control 
-              input(type='checkbox' checked value="1") 
+              input(type='checkbox') 
               span Twitterにも投稿
+    .list-group
+      .list-group-item
+        h3 友達
+          img(src='')
       each posts
         .list-group-item
           .media

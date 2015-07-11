@@ -42,8 +42,6 @@ if(Meteor.isClient){
     ads()
   },1000)
 
-  Meteor.startup(function(){
     Meteor.subscribe('users')
     Meteor.subscribe('posts')
-  })
 }
