@@ -17,3 +17,4 @@ npm-container
 mquandalle:jade
 twbs:bootstrap
 fortawesome:fontawesome
+iron:router
