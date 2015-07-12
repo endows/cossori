@@ -1,5 +1,5 @@
 if(Meteor.isClient){
-  Template.channel_info.helpers({
+  Template.channel.helpers({
     users:function(){
       return Users.find()
     },
@@ -11,7 +11,7 @@ if(Meteor.isClient){
     }
   })
 
-  Template.channel_info.events({
+  Template.channel.events({
     'submit form':function(e){
       e.preventDefault()
       var input = e.target[0]
