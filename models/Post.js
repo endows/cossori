@@ -5,8 +5,7 @@ Posts._transform = function(doc){
 }
 
 if(Meteor.isServer){
-  Meteor.publish('posts',function(){
-    return Posts.find()
+  Meteor.publish('postsWithChannel',function(channel_id){
+    return Posts.find({channel:channel_id})
   })
-
 }
