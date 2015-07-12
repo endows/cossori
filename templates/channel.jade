@@ -2,7 +2,7 @@ template(name='channel')
   if my
     .list-group  
       .list-group-item
-        h1 おおかみこどもの雨と雪
+        h1 {{channel.title}}
       .list-group-item
         .media
           .media-left
@@ -13,9 +13,6 @@ template(name='channel')
               input(type='checkbox') 
               span Twitterにも投稿
     .list-group
-      .list-group-item
-        h3 友達
-          img(src='')
       each posts
         .list-group-item
           .media

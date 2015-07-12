@@ -11,14 +11,14 @@ if (Meteor.isClient) {
     },
 
     data: {
-      users: function() {
-        return Users.find()
+      channel:function(){
+        return Channels.findOne(Session.get('channel_id'))
       },
-      my: function() {
+      my:function(){
         return Meteor.user()
       },
-      posts: function() {
-        return Posts.find().fetch().reverse();
+      posts:function(){
+        return Posts.find().fetch().reverse()
       }
     },
 
