@@ -1,10 +1,22 @@
 template(name='channel_list')
   .row
+    .col-md-4
+      .list-group
+        .list-group-item
+          h1
+            small タイトルを作成
+        form
+          .list-group-item
+            input.form-control(type='text' placeholder="画像URL")
+          .list-group-item
+            input.form-control(type='text' placeholder="タイトル")
+          .list-group-item
+            button.btn.btn-primary.btn-block(type='submit') 作成
     each channels
       .col-md-4
         .panel.panel-default
           img.img-rounded.img-responsive(src=image)
-          h4 風の谷のナウシカ
+          h4 {{title}}
             br
             small
               |実況中のユーザ

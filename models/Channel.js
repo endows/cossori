@@ -5,4 +5,10 @@ if(Meteor.isServer){
     return Channels.find()
   })
 
+  Meteor.methods({
+    'addChannel':function(new_channel){
+      Channels.insert(new_channel)
+    }
+  })
+
 }
