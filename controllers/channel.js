@@ -19,12 +19,16 @@ if (Meteor.isClient) {
       },
       posts:function(){
         return Posts.find().fetch().reverse()
+      },
+      visiters:function(){
+        return Channels.findOne(Session.get('channel_id')).visiters
       }
     },
 
 
     action: function() {
       Session.set('channel_id',this.params._id)
+      Meteor.call('visit',this.params._id)
       this.render('channel');
     }
   })

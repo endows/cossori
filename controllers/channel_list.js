@@ -17,4 +17,5 @@ if(Meteor.isClient){
   })
 
   Meteor.subscribe('channels')
+  Meteor.subscribe('users')
 }

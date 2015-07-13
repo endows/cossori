@@ -3,6 +3,11 @@ template(name='channel')
     .list-group  
       .list-group-item
         h1 {{channel.title}}
+        h3
+          small
+            |実況中のユーザ
+        each visiters
+          img.img-rounded(src=profile.image)
       .list-group-item
         .media
           .media-left
