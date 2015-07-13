@@ -1,4 +1,18 @@
 if(Meteor.isClient){
+  Router.route('/', {
+    action:function(){
+      Meteor.call('visit','')
+      this.render('channel_list');
+    },
+    waitOn:function(){
+      return [
+        Meteor.subscribe('channels'),
+        Meteor.subscribe('users')
+      ]
+    }
+
+
+  })
   Template.channel_list.helpers({
     channels:function(){
       return Channels.find()
@@ -16,6 +30,5 @@ if(Meteor.isClient){
     }
   })
 
-  Meteor.subscribe('channels')
-  Meteor.subscribe('users')
+
 }

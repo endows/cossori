@@ -30,7 +30,7 @@ if (Meteor.isClient) {
       Session.set('channel_id',this.params._id)
       Session.set('channel_name',Channels.findOne(this.params._id).title)
       Meteor.call('visit',this.params._id)
-      Meteor.call('tweet',"[こっそり実況中]" + Session.get('channel_name'),"http://public-viewing.tk/" + this.params._id)
+      Meteor.call('tweet',"【こっそり実況中】" + Session.get('channel_name'),"http://public-viewing.tk/channel/" + this.params._id)
       if(Meteor.userId()){
         this.render('channel');
       }else{
@@ -52,25 +52,12 @@ if (Meteor.isClient) {
       })
 
       if (flag.checked) {
-        var text = input.value
-        Meteor.call('tweet', text, "http://public-viewing.tk")
+        var text = input.value + " #こっそり実況"
+        Meteor.call('tweet', text, "http://public-viewing.tk/channel/" + Session.get('channel_id'))
       }
 
       input.value = ''
     }
   })
-
-  window.ads = function() {
-    if (Meteor.userId() && !localStorage['tweeted']) {
-      var text = "[こっそり実況中]-おおかみこどもの雨と雪-"
-      Meteor.call('tweet', text, "http://public-viewing.tk")
-      localStorage['tweeted'] = true
-    }
-  }
-
-  setInterval(function() {
-    ads()
-  }, 1000)
-
 
 }

@@ -3,11 +3,7 @@ if(Meteor.isClient){
     layoutTemplate: 'body'
   })
 
-  Router.route('/', function () {
-    Meteor.call('visit','')
-    this.render('channel_list');
 
-  })
 
 
 
