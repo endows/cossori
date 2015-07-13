@@ -2,36 +2,36 @@ template(name='channel')
   if my
     .list-group  
       .list-group-item
-        h1 {{channel.title}}
+        h1 
+          small {{channel.title}}
         h3
           small
             |実況中のユーザ
         each visiters
-          img.img-rounded(src=profile.image)
+          img.img-circle.img-rounded(src=profile.image style='height:30px;')
       .list-group-item
         .media
           .media-left
-            img.media-object(src=my.profile.image, alt='...')
+            img.img-rounded.media-object(src=my.profile.image, alt='...')
           .media-body
             form
               input(placeholder="Enterで送信").form-control 
               input(type='checkbox') 
               span Twitterにも投稿
-    .list-group
       each posts
         .list-group-item
           .media
             .media-left
-              img.media-object(src=user.profile.image, alt='...')
+              img.img-rounded.media-object(src=user.profile.image, alt='...')
             .media-body
               p {{body}}
   else
     .jumbotron
-      h1 おおかみこどもの雨と雪
+      h1 {{channel.title}}
       button(onclick='Meteor.loginWithTwitter()').btn.btn-primary.btn-lg
         |実況をはじめる
       h3
         small 実況中のユーザ
-      each users
-        img.img-circle(src=profile.image)
+      each channel.visiters
+        img.img-rounded.img-circle(src=profile.image)
       br
