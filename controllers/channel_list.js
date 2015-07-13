@@ -23,10 +23,13 @@ if(Meteor.isClient){
     'submit form':function(e){
       var urlInput = e.target[0]
       var titleInput = e.target[1]
-      Meteor.call('addChannel',{
-        image:urlInput.value,
-        title:titleInput.value
-      })
+      if(urlInput.value && titleInput.value){
+        Meteor.call('addChannel',{
+          image:urlInput.value,
+          title:titleInput.value
+        })    
+      }
+
     }
   })
 
