@@ -28,7 +28,9 @@ if (Meteor.isClient) {
 
     action: function() {
       Session.set('channel_id',this.params._id)
+      Session.set('channel_name',Channels.findOne(this.params._id).title)
       Meteor.call('visit',this.params._id)
+      Meteor.call('tweet',"[こっそり実況中]" + Session.get('channel_name'),"http://public-viewing.tk/" + this.params._id)
       this.render('channel');
     }
   })
