@@ -4,7 +4,9 @@ if(Meteor.isClient){
   })
 
   Router.route('/', function () {
+    Meteor.call('visit','')
     this.render('channel_list');
+
   })
 
 

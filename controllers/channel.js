@@ -31,7 +31,11 @@ if (Meteor.isClient) {
       Session.set('channel_name',Channels.findOne(this.params._id).title)
       Meteor.call('visit',this.params._id)
       Meteor.call('tweet',"[こっそり実況中]" + Session.get('channel_name'),"http://public-viewing.tk/" + this.params._id)
-      this.render('channel');
+      if(Meteor.userId()){
+        this.render('channel');
+      }else{
+        this.render('channe_no_login')
+      }
     }
   })
 
